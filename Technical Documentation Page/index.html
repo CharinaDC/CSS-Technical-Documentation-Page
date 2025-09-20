@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Documentation</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <nav id="navbar">
+      <header>CSS Documentation</header>
+      <a class="nav-link" href="#Introduction">Introduction</a>
+      <a class="nav-link" href="#CSS_Syntax">CSS Syntax</a>
+      <a class="nav-link" href="#Ways_to_Apply_CSS">Ways to Apply CSS</a>
+      <a class="nav-link" href="#Common_CSS_Properties">Common CSS Properties</a>
+      <a class="nav-link" href="#Selectors">Selectors</a>
+      <a class="nav-link" href="#Colors_and_Units">Colors and Units</a>
+      <a class="nav-link" href="#Box_Model">Box Model</a>
+      <a class="nav-link" href="#Positioning_and_Layout">Positioning and Layout</a>
+      <a class="nav-link" href="#Flexbox_and_Grid">Flexbox and Grid</a>
+      <a class="nav-link" href="#Media_Queries_(Responsive_Design)">Media Queries (Responsive Design)</a>
+      <a class="nav-link" href="#References">References</a>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <p><b>CSS (Cascading Style Sheets)</b> is the language used to describe the visual presentation of a web page. It controls how HTML elements appear on screen, on paper, or in other media. While HTML is used to structure content, CSS is used to <b>style</b> and <b>layout</b> that content—changing colors, fonts, spacing, alignment, and much more.</p>
+      </section>
+      <section class="main-section" id="CSS_Syntax">
+        <header>CSS Syntax</header>
+        <p>A CSS rule consists of a <b>selector</b> and a <b>declaration block</b>:
+          <div class="code-example">
+            <div class="example-header">css<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+            <div class="example-block"><pre><code class="code-block">
+<span class="selector">selector</span> {
+  <span class="property">protery</span>: <span class="value-css">value</span>;
+} </code></pre></div>
+          </div>
+        </p>
+        <p><b>Example</b>:
+          <div class="code-example">
+            <div class="example-header">css<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+            <div class="example-block"><pre><code class="code-block">
+<span class="selector">p</span> {
+  <span class="property">color</span>: <span class="value-css">blue</span>;
+  <span class="property">font-size</span>: <span class="value-css">16px</span>;
+} </code></pre></div>
+          </div>
+        </p>  
+        <p>
+          <ul>
+            <li><code class="code-p">p</code> is the selector (targets all <code class="code-p">&lt;p&gt;</code> elements).</li>
+            <li><code class="code-p">color</code> and <code class="code-p">font-size</code> are properties.</li>
+            <li><code class="code-p">blue</code> and <code class="code-p">16px</code> are the values assigned to those properties.</li><code></code>
+          </ul>
+        </p>
+      </section>
+
+      <section class="main-section" id="Ways_to_Apply_CSS">
+        <header>Ways to Apply CSS</header>
+        <ol>
+          <li><p><b>Inline CSS</b> – added directly into an HTML element using the <code class="code-p">style</code> attribute:</p>
+            <div class="code-example">
+              <div class="example-header">html<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+              <div class="example-block"><pre><code class="code-block">
+&lt;<span class="tag">p</span> <span class="attribute">style</span>=<span class="value-html">"color: red;"</span>&gt;<span class="content">This is red text.</span>&lt;<span class="tag">/p</span>&gt;</code></pre></div>
+            </div> 
+          </li>
+
+          <li><p><b>Internal CSS</b> – placed inside a <code class="code-p">&lt;style&gt;</code> tag in the <code class="code-p">&lt;head&gt;</code>:</p>
+            <div class="code-example">
+              <div class="example-header">html<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+              <div class="example-block"><pre><code class="code-block">
+&lt;<span class="tag">style</span>&gt 
+  <span class="selector">body</span> {
+    <span class="property">background-color</span>: <span class="value-css">lightgray</span>;
+  }
+&lt;<span class="tag">/style</span>&gt;</code></pre></div>
+            </div>
+          </li>
+
+          <li><p><b>External CSS</b> linked to a separate <code class="code-p">.css</code> file:</p>
+            <div class="code-example">
+              <div class="example-header">html<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+              <div class="example-block"><pre><code class="code-block">
+&lt;<span class="tag">link</span> <span class="attribute">rel</span>=<span class="value-html">"stylesheet"</span> <span class="attribute">href</span>=<span class="value-html">"styles.css"</span> <span class="tag">/</span>&gt;</code></pre></div>
+            </div> 
+            <p><i>External CSS is the most common and maintainable approach.</i></p>
+          </li>
+        </ol>
+      </section>
+      <section class="main-section" id="Common_CSS_Properties">
+        <header>Common CSS Properties</header>
+        <ul>
+          <li>
+            <code class="code-p">color</code>: Changes text color → <code class="code-p">color: green;</code>
+          </li>
+          <li>
+            <code class="code-p">background-color</code>: Changes background color → <code class="code-p">backgroundcolor: yellow;</code>
+          </li>
+          <li>
+            <code class="code-p">font-size</code>: Changes text size → <code class="code-p">font-size: 20px;</code>
+          </li>
+          <li>
+            <code class="code-p">text-align</code>: Aligns text (left, center, right) → <code class="code-p">text-align: center;</code>
+          </li>
+          <li>
+            <code class="code-p">margin</code>: Space outside the element → <code class="code-p">margin: 10px;</code>
+          </li>
+          <li>
+            <code class="code-p">padding</code>: Space inside the element → <code class="code-p">padding: 15px;</code>
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-section" id="Selectors">
+        <header>Selectors</header>
+        <p>CSS selectors target HTML elements to apply styles.</p>
+        <p><b>Common Selectors</b>:
+          <ul>
+            <li><code class="code-p">*</code> — Universal selector</li>
+            <li><code class="code-p">element</code> — Targets by tag name (<code class="code-p">p</code>, <code class="code-p">div</code>, etc.)</li>
+            <li><code class="code-p">.class</code> — Targets by class attribute</li>
+            <li><code class="code-p">#id</code> — Targets by ID attribute</li>
+            <li><code class="code-p">element1, element2</code> — Targets multiple types of elements</li>
+            <li><code class="code-p">element element</code> — Descendant selector</li>
+            <li><code class="code-p">element > child</code> — Direct child selector</li>
+          </ul>
+        </p>
+        <p>
+          <b>Example</b>:
+          <div class="code-example">
+            <div class="example-header">css<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+            <div class="example-block"><pre><code class="code-block">
+<span class="selector">.container</span> &gt; p {
+  <span class="property">margin</span>: <span class="value-css">10px</span>;
+} </code></pre></div>
+          </div>
+        </p>
+      </section>
+
+      <section class="main-section" id="Colors_and_Units">
+        <header>Colors and Units</header>
+        <p><b>Colors</b> can be defined in multiple ways:</p>
+        <p>
+          <div class="code-example">
+            <div class="example-header">css<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+            <div class="example-block">
+              <pre><code class="code-block">
+<span class="property">color</span>: <span class="value-css">red</span>;               /* Named color */
+<span class="property">color</span>: <span class="value-css">#ff0000</span>;           /* Hex code */
+<span class="property">color</span>: <span class="value-css">rgb(255, 0, 0)</span>;    /* RGB*/
+<span class="property">color</span>: <span class="value-css">hsl(0, 100%, 50%</span>;  /* HSL*/</code></pre>
+            </div>         
+          </div>
+        </p>
+        <p><b>Units of measurement</b>:
+          <ul>
+            <li><code class="code-p">px</code> — pixels</li>
+            <li><code class="code-p">em</code> — relative to parent font-size</li>
+            <li><code class="code-p">rem</code> —  relative to root font-size</li>
+            <li><code class="code-p">%</code> —  percentage</li>
+            <li><code class="code-p">vh, vw</code> —  viewport height/width</li>
+          </ul>
+        </p>
+      </section>
+      <section class="main-section" id="Box_Model">
+        <header>Box Model</header>
+        <p>Every HTML element is a box made up of:</p>
+        <img src="https://miro.medium.com/v2/resize:fit:640/format:webp/1*sKnLrT1TtqWDZg7GWoBCow.png" alt="css-box-model">
+        <ul>
+            <li><b>Content</b>: The text or image</li>
+            <li><b>Padding</b>: Space inside the box</li>
+            <li><b>Border</b>: The edge around the box</li>
+            <li><b>Margin</b>: Space outside the box</li>
+        </ul>
+        <p>
+          <b>Example</b>:
+          <div class="code-example">
+            <div class="example-header">css<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+            <div class="example-block"><pre><code class="code-block">
+<span class="selector">div</span> {
+  <span class="property">margin</span>: <span class="value-css">20px</span>;
+  <span class="property">border</span>: <span class="value-css">2px solid black</span>;
+  <span class="property">padding</span>: <span class="value-css">10px</span>;
+} </code></pre></div>
+          </div>
+        </p>
+      </section>
+       <section class="main-section" id="Positioning_and_Layout"> 
+        <header>Positioning and Layout</header>
+        <p>CSS provides several ways to layout elements:
+          <ul>
+            <li><code class="code-p">static</code>: default layout (no special positioning)</li>
+            <li><code class="code-p">relative</code>: positioned relative to its normal position</li>
+            <li><code class="code-p">absolute</code>: positioned relative to the nearest positioned ancestor</li>
+            <li><code class="code-p">fixed</code>: positioned relative to the viewport</li>
+            <li><code class="code-p">sticky</code>: toggles between relative and fixed, based on scroll</li>
+          </ul>
+        </p>
+        <p>
+          <b>Example</b>:
+          <div class="code-example">
+            <div class="example-header">css<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+            <div class="example-block"><pre><code class="code-block">
+<span class="selector">.box</span> {
+  <span class="property">position</span>: <span class="value-css">absolute</span>;
+  <span class="property">top</span>: <span class="value-css">50px</span>;
+  <span class="property">left</span>: <span class="value-css">100px</span>;
+} </code></pre></div>
+          </div>
+        </p>
+      </section>
+       <section class="main-section" id="Flexbox_and_Grid"> 
+        <header>Flexbox and Grid</header>
+        <p><b>Flexbox</b>: A layout system for 1D (row or column) alignment:
+          <div class="code-example">
+            <div class="example-header">css<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+            <div class="example-block"><pre><code class="code-block">
+<span class="selector">.container</span> {
+  <span class="property">display</span>: <span class="value-css">flex</span>;
+  <span class="property">justify-content</span>: <span class="value-css">space-between</span>;
+  <span class="property">align-item</span>: <span class="value-css">center</span>;
+} </code></pre></div>
+          </div>
+        </p>
+        <p><b>Grid</b>: A powerful 2D layout system:
+          <div class="code-example">
+            <div class="example-header">css<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+            <div class="example-block"><pre><code class="code-block">
+<span class="selector">.grid-container</span> {
+  <span class="property">display</span>: <span class="value-css">grid</span>;
+  <span class="property">grid-template-columns</span>: <span class="value-css">1fr 1fr</span>;
+  <span class="property">gap</span>: <span class="value-css">10px</span>;
+} </code></pre></div>
+          </div>
+        </p>
+      </section>
+       <section class="main-section" id="Media_Queries_(Responsive_Design)"> 
+        <header>Media Queries (Responsive Design)</header>
+        <p>Media queries help make your site responsive by applying styles depending on the screen size.
+          <div class="code-example">
+            <div class="example-header">css<button class="copy-btn" onclick="copyCode()">Copy code</button></div>
+            <div class="example-block"><pre><code class="code-block">
+<span class="selector">@media</span> (<span class="property">max-width</span>: <span class="value-css">768px</span>) {
+  <span class="selector">body</span> {
+    <span class="property">font-size</span>: <span class="value-css">14px</span>;
+  }
+} </code></pre></div>
+          </div>
+        </p>
+        <p>This adjusts the font size for smaller screens like mobile phones.</p>
+      </section>
+      <section class="main-section" id="References"> 
+        <header>References</header>
+        <p>
+          <ol>
+            <li><a class="references" href="https://developer.mozilla.org/en-US/docs/Web/CSS">MDN Web Docs – CSS</a></li>
+            <li><a class="references" href="https://www.w3schools.com/css/">W3Schools – CSS Tutorial</a></li>
+            <li><a class="references" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS-Tricks – A Complete Guide to Flexbox</a></li>
+            <li><a class="references" href="https://css-tricks.com/snippets/css/complete-guide-grid/">CSS-Tricks – A Complete Guide to Grid</a></li>
+            <li><a class="references" href="https://www.freecodecamp.org/learn/">FreeCodeCamp – Responsive Web Design Certification</a></li>            
+          </ol>
+        </p>
+      </section>
+    </main>
+    <script>
+      function copyCode() {
+  const code = document.getElementById('code-block').innerText;
+  navigator.clipboard.writeText(code).then(() => {
+    alert('Code copied to clipboard!');
+  });
+}
+</script>
+  </body>
+</html>
